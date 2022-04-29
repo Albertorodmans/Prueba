@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  app:
+    build: .
+
+    depends_on:
+      - base
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/go/src/prueba
+  base:
+    image: mongo
